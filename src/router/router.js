@@ -1,5 +1,5 @@
 
-import React from 'react'
+// import React from 'react'
 
 import loadable from '@loadable/component'
 import { Redirect } from 'react-router-dom'

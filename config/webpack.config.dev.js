@@ -12,7 +12,7 @@ const baseConfigFn = require('./webpack.config.base');
 const baseConfig = baseConfigFn('development')
 
 const webpackDevClientEntry = require.resolve(
-  './config-utils/webpackHotDevClient'
+  'react-dev-utils/webpackHotDevClient'
 );
 const reactRefreshOverlayEntry = require.resolve(
   'react-dev-utils/refreshOverlayInterop'

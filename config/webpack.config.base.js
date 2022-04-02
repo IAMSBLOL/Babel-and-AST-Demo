@@ -167,14 +167,31 @@ module.exports = function (webpackEnv) {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
               include: paths.appSrc,
 
-              loader: require.resolve('babel-loader'),
-              options: {
-                ...babelOptions,
-                cacheDirectory: true,
-                // See #6846 for context on why cacheCompression is disabled
-                cacheCompression: false,
-                compact: isEnvProduction,
-              },
+              use: [
+
+                {
+                  loader: require.resolve('babel-loader'),
+                  options: {
+                    ...babelOptions,
+                    cacheDirectory: true,
+                    // See #6846 for context on why cacheCompression is disabled
+                    cacheCompression: false,
+                    compact: isEnvProduction,
+
+                  },
+                },
+                {
+                  loader: require.resolve('../testloader.js'),
+                  options: {
+                    ...babelOptions,
+                    // cacheDirectory: true,
+                    // See #6846 for context on why cacheCompression is disabled
+                    // cacheCompression: false,
+                    compact: isEnvProduction,
+
+                  },
+                },
+              ]
             },
             {
               test: /\.(js|mjs)$/,

@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { Redirect } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config'
 import './app.module.less'
